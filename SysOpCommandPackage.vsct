@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+	<Commands package="guidSysOpCommandPackage">
+
+		<!-- SADECE GRUP VE BUTON (Doğrudan Extensions menüsüne bağlı) -->
+		<Groups>
+			<Group guid="guidSysOpCommandPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidExtensionsMenu" id="IDM_VS_MENU_EXTENSIONS" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidSysOpCommandPackageCmdSet" id="SysOpCommandId" priority="0x0100" type="Button">
+				<Parent guid="guidSysOpCommandPackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>D365 Code Generator</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+	</Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidSysOpCommandPackage" value="{63175cc7-f2e7-4327-9db4-74c23a73ab5d}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidSysOpCommandPackageCmdSet" value="{78a83e6a-1dee-4e73-83bd-dc39202f9103}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="SysOpCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{2ee691eb-20f7-4efa-983f-7085fb0b49d8}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+	<GuidSymbol name="guidExtensionsMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+		<IDSymbol name="IDM_VS_MENU_EXTENSIONS" value="0x0091" />
+	</GuidSymbol>
+  </Symbols>
+</CommandTable>

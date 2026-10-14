@@ -1,0 +1,91 @@
+﻿<Window x:Class="D365CodeGenerator.GeneratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="D365 Code Generator - SysOperation Builder" Height="650" Width="900"
+        WindowStartupLocation="CenterScreen" Background="#F5F5F5">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Classes to Generate" Grid.Row="0" Padding="10" Margin="0,0,0,10">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                    <TextBlock Text="Base Name (e.g. CustUpdate): " VerticalAlignment="Center" FontWeight="Bold"/>
+                    <TextBox x:Name="TxtBaseName" Width="200" Margin="10,0,0,0" TextChanged="TxtBaseName_TextChanged"/>
+                </StackPanel>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <CheckBox x:Name="ChkContract" Content="Contract" IsChecked="True" VerticalAlignment="Center" Checked="Visibility_Changed" Unchecked="Visibility_Changed"/>
+                        <TextBox x:Name="TxtContractName" Width="150" Margin="10,0,0,0" IsReadOnly="True" Background="#EEEEEE"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <CheckBox x:Name="ChkService" Content="Service" IsChecked="True" VerticalAlignment="Center" Checked="Visibility_Changed" Unchecked="Visibility_Changed"/>
+                        <TextBox x:Name="TxtServiceName" Width="150" Margin="10,0,0,0" IsReadOnly="True" Background="#EEEEEE"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <CheckBox x:Name="ChkController" Content="Controller" IsChecked="True" VerticalAlignment="Center" Checked="Visibility_Changed" Unchecked="Visibility_Changed"/>
+                        <TextBox x:Name="TxtControllerName" Width="150" Margin="10,0,0,0" IsReadOnly="True" Background="#EEEEEE"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Contract Parameters" Grid.Row="1" Padding="5" Margin="0,0,0,10">
+            <DataGrid x:Name="GridParameters" AutoGenerateColumns="False" CanUserAddRows="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Data Type / EDT (e.g. int, CustAccount)" Binding="{Binding DataType}" Width="250"/>
+                    <DataGridTextColumn Header="Variable Name (e.g. maxRetryCount)" Binding="{Binding Name}" Width="200"/>
+                    <DataGridTextColumn Header="Label (e.g. @SYS12345 or Description)" Binding="{Binding Label}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <Button Grid.Row="2" Content="Generate Code" Height="35" Width="150" HorizontalAlignment="Right" Margin="0,0,0,10" Background="#007ACC" Foreground="White" FontWeight="Bold" Click="BtnGenerate_Click"/>
+
+        <TabControl x:Name="TabResult" Grid.Row="3" Visibility="Collapsed">
+            <TabItem x:Name="TabContract" Header="Contract Class">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="TxtContractCode" Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" IsReadOnly="True" Margin="5"/>
+                    <Button Grid.Row="1" Content="📋 Copy Contract Code" Height="30" Width="180" HorizontalAlignment="Right" Margin="5" Click="BtnCopyContract_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabService" Header="Service Class">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="TxtServiceCode" Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" IsReadOnly="True" Margin="5"/>
+                    <Button Grid.Row="1" Content="📋 Copy Service Code" Height="30" Width="180" HorizontalAlignment="Right" Margin="5" Click="BtnCopyService_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabController" Header="Controller Class">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="TxtControllerCode" Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" IsReadOnly="True" Margin="5"/>
+                    <Button Grid.Row="1" Content="📋 Copy Controller Code" Height="30" Width="180" HorizontalAlignment="Right" Margin="5" Click="BtnCopyController_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
