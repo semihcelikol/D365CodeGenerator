@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>D365 Class Extension (CoC)</Title>
+      <Shortcut>cocclass</Shortcut>
+      <Description>Generates Chain of Command boilerplate for a Class</Description>
+      <Author>Semih Çelikol</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <ToolTip>Name of the class to extend</ToolTip>
+          <Default>ClassName</Default>
+        </Literal>
+        <Literal>
+          <ID>ExtensionName</ID>
+          <ToolTip>Extension suffix</ToolTip>
+          <Default>Extension</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="xpp">
+        <![CDATA[[ExtensionOf(classStr($ClassName$))]
+final class $ClassName$_$ExtensionName$
+{
+    $end$
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

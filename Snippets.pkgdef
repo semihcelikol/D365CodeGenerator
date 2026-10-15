@@ -1,0 +1,5 @@
+[$RootKey$\Languages\CodeExpansions\xpp\Paths]
+"D365CodeGenerator"="$PackageFolder$\Snippets"
+
+[$RootKey$\Languages\CodeExpansions\X++\Paths]
+"D365CodeGenerator"="$PackageFolder$\Snippets"

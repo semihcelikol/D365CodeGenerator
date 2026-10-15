@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="D365CodeGenerator.54d17eaf-5240-474a-a0b1-d63f5aa6a627" Version="1.0" Language="en-US" Publisher="Semih Celikol" />
+        <Identity Id="D365CodeGenerator.54d17eaf-5240-474a-a0b1-d63f5aa6a627" Version="1.1" Language="en-US" Publisher="Semih Celikol" />
         <DisplayName>Dynamics 365 F&amp;O Code Generator</DisplayName>
         <Description xml:space="preserve">A lightweight Visual Studio extension for generating D365 F&amp;O SysOperation framework boilerplate code</Description>
         <Icon>Resources\icon.png</Icon>

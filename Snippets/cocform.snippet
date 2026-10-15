@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>D365 Form Extension (CoC)</Title>
+      <Shortcut>cocform</Shortcut>
+      <Description>Generates Chain of Command boilerplate for a Form</Description>
+      <Author>Semih Çelikol</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>FormName</ID>
+          <ToolTip>Name of the form</ToolTip>
+          <Default>FormName</Default>
+        </Literal>
+        <Literal>
+          <ID>ExtensionName</ID>
+          <ToolTip>Extension suffix</ToolTip>
+          <Default>Extension</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="xpp">
+        <![CDATA[[ExtensionOf(formStr($FormName$))]
+final class $FormName$_$ExtensionName$
+{
+    $end$
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
