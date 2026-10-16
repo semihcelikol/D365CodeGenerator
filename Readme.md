@@ -1,9 +1,5 @@
 # D365 Code Generator for Visual Studio 2022
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Visual%20Studio%202022-purple.svg)
-![Target](https://img.shields.io/badge/target-Dynamics%20365%20F%26O-green.svg)
-
 **D365 Code Generator** is a lightweight, platform-independent Visual Studio 2022 extension designed to accelerate X++ development for Microsoft Dynamics 365 Finance & Operations. It instantly generates standardized, production-ready `SysOperation` framework code (Contract, Service, Controller) without relying on local Dynamics environment dependencies.
 
 ---
@@ -37,6 +33,31 @@
 4. Click **Generate Code**.
 5. Switch between the output tabs (**Contract Class**, **Service Class**, **Controller Class**) and click **📋 Copy Code** to paste directly into your X++ solution.
 
+---
+
+### Usage: CoC Snippets (New in v1.1)
+
+1. Open any .xpp file in the Visual Studio code editor.
+2. Right-click anywhere in the code editor and select Snippet > Insert Snippet...
+3. Select the D365CodeGeneratorSnippets folder.
+4. Choose the desired Chain of Command template (e.g., D365 Class Extension).
+
+### ✂️ X++ Snippet Reference (v1.1)
+Included templates for rapidly building Extension classes:
+  -  `cocclass `: D365 Class Extension (CoC)
+  -  `coctbl`: D365 Table Extension (CoC)
+  -  `cocform`: D365 Form Extension (CoC)
+  - `cocfds`: D365 Form DataSource Extension (CoC)
+
+_Example Output (Class Extension):_
+
+```xpp
+[ExtensionOf(classStr(ClassName))]
+final class ClassName_Extension
+{
+    
+}
+```
 ---
 
 ## 🛠️ Generated Code Example
