@@ -65,16 +65,16 @@
     <Content Include="Snippets.pkgdef">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Snippets\cocformds.snippet">
+    <Content Include="D365CodeGeneratorSnippets\cocformds.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Snippets\cocclass.snippet">
+    <Content Include="D365CodeGeneratorSnippets\cocclass.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Snippets\coctable.snippet">
+    <Content Include="D365CodeGeneratorSnippets\coctable.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Snippets\cocform.snippet">
+    <Content Include="D365CodeGeneratorSnippets\cocform.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="source.extension.vsixmanifest">
