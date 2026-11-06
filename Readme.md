@@ -2,6 +2,8 @@
 
 **D365 Code Generator** is a lightweight, platform-independent Visual Studio 2022 extension designed to accelerate X++ development for Microsoft Dynamics 365 Finance & Operations. It instantly generates standardized, production-ready `SysOperation` framework code (Contract, Service, Controller) without relying on local Dynamics environment dependencies.
 
+![SysOperation Builder window](https://raw.githubusercontent.com/semihcelikol/D365CodeGenerator/master/docs/screenshot.png)
+
 ---
 
 ## 🌟 Key Features
